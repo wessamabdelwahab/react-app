@@ -57,14 +57,15 @@ pipeline {
             steps {
                 script {
                     final String url = "http://localhost:1233"
+                    
+                    final def (String response, int code) = sh(script: "curl -o /dev/null -s -w '%{http_code}\\n' $url", returnStdout: true).trim()
 
-                    final def (String response, int code) = 
-                        sh(script: "curl -s -w '%{http_code}\\n' $url", returnStdout: true).trim()
-
-                    echo "HTTP response status code: $code"
+                    echo "HTTP response status code"
                         if (code == 200) {
                             echo response
-                        }
+                        } else {
+                            echo 'error'
+                        } 
                 }
             }
         }
