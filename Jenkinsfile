@@ -58,8 +58,8 @@ pipeline {
                 script {
                     def url = "http://localhost:1233"
                     
-                    def response = sh(script: "curl -o /dev/null -s -w '%{http_code}\\n' $url")
-
+                    def response = sh(script: "curl -o /dev/null -s -w '%{http_code}\\n' $url", returnStdout: true).trim()
+                    
                     echo "HTTP response status code"
                         if (code == 200) {
                             echo "Success ${response}"
