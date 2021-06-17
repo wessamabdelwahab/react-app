@@ -60,7 +60,13 @@ pipeline {
                     
                     final String response = sh(script: "curl -o /dev/null -s -w '%{http_code}\\n' $url", returnStdout: true).trim()
                     
-                    echo response
+                    if (response == 200) {
+                        echo response
+                        println "Successful Response Code" 
+                    } else {
+                        echo response
+                        println "Error Response Code" 
+                    }
 
                 }
             }
