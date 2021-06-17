@@ -35,12 +35,31 @@ pipeline {
                 }
             }
         }
-        stage('DeployToProduction') {
+         stage('DeployToStaging') {
             when {
                 branch 'main'
             }
             steps {
                 input 'Deploy to Production?'
+                 milestone(1)
+                    script {
+                        sh "docker pull wessamabdelwahab/react-app:${env.BUILD_NUMBER}"
+                        try {
+                            sh "docker stop react-app"
+                            sh "docker rm react-app"
+                        } catch (err) {
+                            echo: 'caught error: $err'
+                        }
+                        sh "docker run --restart always --name react-app -p 1233:80 -d wessamabdelwahab/react-app:${env.BUILD_NUMBER}"
+                    }
+            }
+        }
+        stage('DeployToProduction') {
+            when {
+                branch 'main'
+            }
+            steps {
+                input 'Does the staging environment look OK?'
                  milestone(1)
                     script {
                         sh "docker pull wessamabdelwahab/react-app:${env.BUILD_NUMBER}"
