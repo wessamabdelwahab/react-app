@@ -56,15 +56,15 @@ pipeline {
         stage("Check HTTP Response") {
             steps {
                 script {
-                    final String url = "http://localhost:1233"
+                    def url = "http://localhost:1233"
                     
-                    final def (String response, int code) = sh(script: "curl -o /dev/null -s -w '%{http_code}\\n' $url", returnStdout: true).trim()
+                    def response = sh(script: "curl -o /dev/null -s -w '%{http_code}\\n' $url")
 
                     echo "HTTP response status code"
                         if (code == 200) {
-                            echo response
+                            echo "Success ${response}"
                         } else {
-                            echo 'error'
+                            echo "Failure ${response}"
                         } 
                 }
             }
