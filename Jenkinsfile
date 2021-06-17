@@ -52,12 +52,25 @@ pipeline {
                     }
             }
         }
+        
+        stage("Check HTTP Response") {
+            steps {
+                script {
+                    final String url = "http://localhost:1233"
+
+                    final String response = sh(script: "curl -s $url", returnStdout: true).trim()
+
+                    echo response
+                }
+            }
+        }
+        
         stage('DeployToProduction') {
             when {
                 branch 'main'
             }
             steps {
-                input 'Does the staging environment look OK?'
+                input 'Does the staging environment look OK? Did You get 200 response?'
                  milestone(1)
                     script {
                         sh "docker pull wessamabdelwahab/react-app:${env.BUILD_NUMBER}"
