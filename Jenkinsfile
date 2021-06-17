@@ -62,9 +62,9 @@ pipeline {
                     
                     echo "HTTP response status code"
                         if (response == 200) {
-                            echo: Success: ${response}'
+                            echo: 'Success: ${response}'
                         } else {
-                            echo: Failure: ${response}'
+                            echo: 'Failure: ${response}'
                         } 
                 }
             }
