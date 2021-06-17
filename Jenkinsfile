@@ -40,8 +40,6 @@ pipeline {
                 branch 'main'
             }
             steps {
-                input 'Deploy to Production?'
-                 milestone(1)
                     script {
                         sh "docker pull wessamabdelwahab/react-app:${env.BUILD_NUMBER}"
                         try {
