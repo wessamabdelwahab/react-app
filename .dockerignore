@@ -1,0 +1,9 @@
+docker rm -node_modules
+npm-debug.log
+.gradle
+dist
+/node_modules
+/build
+.git
+*.md
+.gitignore
