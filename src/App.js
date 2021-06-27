@@ -1,8 +1,10 @@
 import logo from './logo.png';
 import './App.css';
 
+var swStats = require('swagger-stats');
+app.use(swStats.getMiddleware());
 
-const promClient = require('prom-client');
+var promClient = require('prom-client');
 promClient.collectDefaultMetrics();
 
 function App() {
