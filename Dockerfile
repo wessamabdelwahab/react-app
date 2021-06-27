@@ -6,8 +6,8 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm ci --silent
 RUN npm install react-scripts@3.4.1 -g --silent
-RUN npm swagger-stats -g --silent
-RUN npm prom-client@12 -g --silent
+RUN npm install swagger-stats -g --silent
+RUN npm install prom-client@12 -g --silent
 COPY . ./
 RUN npm run build
 
