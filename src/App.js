@@ -1,10 +1,6 @@
 import logo from './logo.png';
 import './App.css';
 
-const swStats = require('swagger-stats');
-const apiSpec = require('swagger.json');
-
-app.use(swStats.getMiddleware({swaggerSpec:apiSpec}));
 
 const promClient = require('prom-client');
 promClient.collectDefaultMetrics();
