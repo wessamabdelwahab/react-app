@@ -10,6 +10,7 @@ RUN npm install swagger-stats --silent
 RUN npm install prom-client --silent
 RUN npm install cluster --silent
 RUN npm install v8 --silent
+RUN npm install repl --silent
 COPY . ./
 RUN npm run build
 
