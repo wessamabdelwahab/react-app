@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { register } from "swagger-stats";
+import { register } from "prom-client";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
