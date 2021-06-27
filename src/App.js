@@ -6,9 +6,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-	    <p>
-          Certificate in DevOps.
-        </p>
+		<p> York University School of Continuing Studies </p>
+	    <p> Certificate in DevOps </p>
         <img src={logo} className="App-logo" alt="logo" />
         <ul>
           <code><li>CSDO1000-Introduction to DevOps</li></code>
@@ -29,4 +28,3 @@ function App() {
 }
 
 export default App;
-
