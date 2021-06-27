@@ -1,5 +1,13 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
+
+const swStats = require('swagger-stats');
+const apiSpec = require('swagger.json');
+
+app.use(swStats.getMiddleware({swaggerSpec:apiSpec}));
+
+const promClient = require('prom-client');
+promClient.collectDefaultMetrics();
 
 function App() {
   return (
@@ -7,15 +15,23 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Certificate in DevOps.
+		  <code>CSDO1000 Introduction to DevOps</code>
+		  <code>CSDO1010 The DevOps Toolchain in Practice</code>
+		  <code></code>
         </p>
+		<ul>
+		  <code><li>CSDO1000 - Introduction to DevOps</li></code>
+		  <code><li>CSDO1010 - The DevOps Toolchain in Practice</li></code>
+		  <code><li>CSDO1020 - Next Generation DevOps</li></code>
+		</ul> 
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://continue.yorku.ca/programs/certificate-in-devops/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn DevOps with York University School of Continuing Studies
         </a>
       </header>
     </div>
