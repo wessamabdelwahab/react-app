@@ -5,7 +5,11 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm ci --silent
-RUN npm install --silent
+RUN npm install react-scripts@3.4.1 --silent
+RUN npm install swagger-stats --silent
+RUN npm install prom-client --silent
+Run npm install cluster --silent
+Run npm install v8 --silent
 COPY . ./
 RUN npm run build
 
