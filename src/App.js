@@ -15,15 +15,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Certificate in DevOps.
-		  <code>CSDO1000 Introduction to DevOps</code>
-		  <code>CSDO1010 The DevOps Toolchain in Practice</code>
-		  <code></code>
         </p>
-		<ul>
-		  <code><li>CSDO1000 - Introduction to DevOps</li></code>
-		  <code><li>CSDO1010 - The DevOps Toolchain in Practice</li></code>
-		  <code><li>CSDO1020 - Next Generation DevOps</li></code>
-		</ul> 
         <a
           className="App-link"
           href="https://continue.yorku.ca/programs/certificate-in-devops/"
