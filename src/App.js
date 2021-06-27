@@ -3,7 +3,7 @@ import logo from './logo.png';
 import './App.css';
 
 const swStats = require('swagger-stats');
-app.use(swStats.getMiddleware());
+App.use(swStats.getMiddleware());
 
 const promClient = require('prom-client');
 promClient.collectDefaultMetrics();
