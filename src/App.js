@@ -2,12 +2,6 @@ import React from 'react';
 import logo from './logo.png';
 import './App.css';
 
-const swStats = require('swagger-stats');
-App.use(swStats.getMiddleware());
-
-const promClient = require('prom-client');
-promClient.collectDefaultMetrics();
-
 function App() {
   return (
     <div className="App">
@@ -16,6 +10,11 @@ function App() {
         <p>
           Certificate in DevOps.
         </p>
+        <ul>
+          <code><li>CSDO1000 - Introduction to DevOps</li></code>
+          <code><li>CSDO1010 - The DevOps Toolchain in Practice</li></code>
+          <code><li>CSDO1020 - Next Generation DevOps</li></code>
+        </ul> 
         <a
           className="App-link"
           href="https://continue.yorku.ca/programs/certificate-in-devops/"
